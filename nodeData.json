@@ -1,0 +1,14 @@
+[
+    { "Position": { "X": 100, "Y": 100 }, "Radius": 50, "ColorString": "Red", "Label": "Los Angeles" },
+    { "Position": { "X": 400, "Y": 100 }, "Radius": 50, "ColorString": "Blue", "Label": "Denver" },
+    { "Position": { "X": 700, "Y": 100 }, "Radius": 50, "ColorString": "Green", "Label": "Chicago" },
+    { "Position": { "X": 1000, "Y": 100 }, "Radius": 50, "ColorString": "Red", "Label": "New York" },
+    { "Position": { "X": 250, "Y": 300 }, "Radius": 50, "ColorString": "Blue", "Label": "London" },
+    { "Position": { "X": 550, "Y": 300 }, "Radius": 50, "ColorString": "Green", "Label": "Berlin" },
+    { "Position": { "X": 850, "Y": 300 }, "Radius": 50, "ColorString": "Red", "Label": "Moscow" },
+    { "Position": { "X": 100, "Y": 500 }, "Radius": 50, "ColorString": "Blue", "Label": "Dubai" },
+    { "Position": { "X": 400, "Y": 500 }, "Radius": 50, "ColorString": "Green", "Label": "Mumbai" },
+    { "Position": { "X": 700, "Y": 500 }, "Radius": 50, "ColorString": "Red", "Label": "Beijing" },
+    { "Position": { "X": 1000, "Y": 500 }, "Radius": 50, "ColorString": "Blue", "Label": "Tokyo" },
+    { "Position": { "X": 625, "Y": 650 }, "Radius": 50, "ColorString": "Green", "Label": "Sydney" }
+]

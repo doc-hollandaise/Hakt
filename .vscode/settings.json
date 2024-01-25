@@ -1,0 +1,10 @@
+{
+    "prettier.singleQuote": true,
+    "prettier.singleAttributePerLine": true,
+    "prettier.insertPragma": true,
+    "editor.defaultFormatter": null,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always",
+        "source.fixAll": "always"
+    }
+}

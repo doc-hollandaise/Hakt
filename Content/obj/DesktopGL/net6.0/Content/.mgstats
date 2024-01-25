@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Games/Monogame/Hakt/Content/ball.png","C:/Games/Monogame/Hakt/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.1068387
+"C:/Games/Monogame/Hakt/Content/crossout.png","C:/Games/Monogame/Hakt/Content/bin/DesktopGL/Content/crossout.xnb","TextureProcessor","Texture2DContent",34454,1114757,0.1303859
+"C:/Games/Monogame/Hakt/Content/Font.spritefont","C:/Games/Monogame/Hakt/Content/bin/DesktopGL/Content/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.1872252

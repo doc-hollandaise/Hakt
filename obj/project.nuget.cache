@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "P7FxlqsOZ3MBgtPS80+adMlRUQXhuNwJYvpwhUmiQOsjBpl/WbsYR3ZJVyJ03b+KiJMcDXclm4yOD3OX6IyTfw==",
+  "success": true,
+  "projectFilePath": "C:\\Games\\Monogame\\Hakt\\Hakt.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\patry\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\patry\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\patry\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
