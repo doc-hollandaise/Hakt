@@ -67,8 +67,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         spriteBatch = new SpriteBatch(GraphicsDevice);
-        font = Content.Load<SpriteFont>("font");
-        CrossOut = Content.Load<Texture2D>("crossout");
+
         Pixel = new Texture2D(GraphicsDevice, 1, 1);
         Pixel.SetData(new[] { Color.White });
         ScreenManager.LoadContent();

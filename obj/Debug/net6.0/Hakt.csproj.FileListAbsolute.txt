@@ -27,3 +27,6 @@ C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\ball.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\Font.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\crossout.xnb
+C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\stars.xnb
+C:\Games\Monogame\Hakt\bin\Debug\net6.0\MonoGame.Extended.dll
+C:\Games\Monogame\Hakt\obj\Debug\net6.0\Hakt.sourcelink.json

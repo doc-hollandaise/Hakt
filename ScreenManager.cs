@@ -8,17 +8,26 @@ public class ScreenManager
     public void ChangeScreen(GameScreen screen)
     {
         currentScreen = screen;
+        currentScreen.Initialize();
+        currentScreen?.LoadContent();
+
+
     }
 
-    public void Update(GameTime gameTime)
+    public void Initialize()
     {
-        currentScreen?.Update(gameTime);
+        currentScreen?.Initialize();
     }
 
     public void LoadContent()
     {
         currentScreen?.LoadContent();
     }
+    public void Update(GameTime gameTime)
+    {
+        currentScreen?.Update(gameTime);
+    }
+
 
     public void Draw(SpriteBatch spriteBatch)
     {

@@ -20,6 +20,11 @@ public class MainGameScreen : GameScreen
         lineThickness = 2f;
     }
 
+    public override void Initialize()
+    {
+        //  init
+    }
+
     public override void LoadContent()
     {
         font = game.Content.Load<SpriteFont>("font");

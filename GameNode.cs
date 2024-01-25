@@ -55,8 +55,6 @@ public class GameNode
 
 
             parentGame.ScreenManager.ChangeScreen(new DetailScreen(parentGame));
-
-
         }
 
         if (isHovered && !hasBeenClicked)
