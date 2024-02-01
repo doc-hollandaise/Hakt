@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hakt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a36f7220a37f88440454425e788b245d64e25530")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3846e0fb60822661797993f6c2edfaeac1f54d14")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hakt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hakt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
