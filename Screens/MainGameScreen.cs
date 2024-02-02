@@ -38,7 +38,10 @@ public class MainGameScreen : GameScreen
         foreach (var nodeData in nodeDatas)
         {
             Color borderColor = nodeData.GetColor();
-            nodes.Add(new GameNode(nodeData.Position, nodeData.Radius, borderColor, nodeData.Label, crossOut, game));
+            GameNode node = new GameNode(nodeData.Position, nodeData.Radius, borderColor, nodeData.Label, crossOut);
+            node.LoadContent(game);
+            nodes.Add(node);
+
         }
 
     }

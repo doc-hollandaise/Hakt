@@ -1,6 +1,7 @@
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\ball.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\crossout.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\Font.xnb
+C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\node.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\stars.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\xunit.runner.visualstudio.testadapter.dll
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\xunit.runner.reporters.netcoreapp10.dll

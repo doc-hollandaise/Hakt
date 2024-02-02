@@ -19,9 +19,11 @@ public class GameNode
     private bool hasBeenClicked { get; set; }
     public float AnimationProgress { get; set; }
     public Texture2D CrossOut { get; set; }
-    public Game1 parentGame { get; }
+    public Texture2D NodeBG { get; set; }
+    private Rectangle DestinationRectangle { get; set; }
+    public Game1 ParentGame { get; set; }
 
-    public GameNode(Vector2 position, float radius, Color color, string label, Texture2D image, Game1 game)
+    public GameNode(Vector2 position, float radius, Color color, string label, Texture2D image)
     {
         Position = position;
         Radius = radius;
@@ -32,7 +34,6 @@ public class GameNode
         hasBeenClicked = false;
         AnimationProgress = 0f;
         CrossOut = image;
-        parentGame = game;
 
     }
 
@@ -42,6 +43,13 @@ public class GameNode
         Radius = radius;
         this.borderColor = borderColor;
         Label = label;
+    }
+
+    public void LoadContent(Game1 game)
+    {
+        ParentGame = game;
+        NodeBG = game.Content.Load<Texture2D>("node");
+        DestinationRectangle = new Rectangle((int)Position.X - 75, (int)Position.Y - 75, 150, 150);
     }
 
     public void Update(GameTime gameTime, MouseState mouseState)
@@ -54,17 +62,37 @@ public class GameNode
             hasBeenClicked = true;
 
 
-            parentGame.ScreenManager.ChangeScreen(new DetailScreen(parentGame));
+            ParentGame.ScreenManager.ChangeScreen(new DetailScreen(ParentGame));
         }
 
         if (isHovered && !hasBeenClicked)
         {
             AnimationProgress += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            float baseScale = 1.0f;
+            float scaleRange = 0.2f;
+            float scale = baseScale + (float)Math.Sin(AnimationProgress * 2 * Math.PI / 1) * scaleRange; // Complete a cycle every 1 second
+
+            // Adjust the position and size based on the scale
+            int scaledWidth = (int)(150 * scale);
+            int scaledHeight = (int)(150 * scale);
+            int offsetX = (scaledWidth - 150) / 2; // Ensure the growth is centered
+            int offsetY = (scaledHeight - 150) / 2;
+
+            DestinationRectangle = new Rectangle((int)Position.X - 75 - offsetX, (int)Position.Y - 75 - offsetY, scaledWidth, scaledHeight);
             if (AnimationProgress >= Game1.AnimationDuration)
             {
                 AnimationProgress = 0f;
+                DestinationRectangle = new Rectangle((int)Position.X - 75, (int)Position.Y - 75, 150, 150);
+
                 // Trigger any specific action for this GameNode
             }
+        }
+
+        if (!isHovered && AnimationProgress >= Game1.AnimationDuration)
+        {
+            AnimationProgress = 0f;
+
+            // Trigger any specific action for this GameNode
         }
     }
 
@@ -72,11 +100,10 @@ public class GameNode
     {
 
 
-        float scale = isHovered && !hasBeenClicked ? 1.0f + 0.1f * (float)Math.Sin(MathHelper.Pi * AnimationProgress / Game1.AnimationDuration) : 1.0f;
-        float animatedRadius = Radius * scale;
+        spriteBatch.Draw(NodeBG, DestinationRectangle, Color.White);
 
-        spriteBatch.DrawCircle(Position, animatedRadius, Game1.LineThickness, Color); // Assuming the DrawCircle extension method
-        spriteBatch.DrawString(font, Label, Position - font.MeasureString(Label) / 2, Color.Black); // Center the label
+        // spriteBatch.DrawCircle(Position, animatedRadius, Game1.LineThickness, Color); // Assuming the DrawCircle extension method
+        // spriteBatch.DrawString(font, Label, Position - font.MeasureString(Label) / 2, Color.Black); // Center the label
 
         // Draw the image if the node has been clicked and animation is completed
         if (hasBeenClicked)
