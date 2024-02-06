@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using Controls;
+using HaktComponent;
 
 
 public class MainGameScreen : GameScreen
@@ -14,7 +16,7 @@ public class MainGameScreen : GameScreen
     private Texture2D crossOut;
     private float lineThickness;
 
-    public MainGameScreen(Game1 game) : base(game)
+    public MainGameScreen(Game1 game, GraphicsDeviceManager graphics) : base(game, graphics)
     {
         nodes = new List<GameNode>();
         lineThickness = 2f;
@@ -27,6 +29,9 @@ public class MainGameScreen : GameScreen
 
     public override void LoadContent()
     {
+
+
+
         font = game.Content.Load<SpriteFont>("font");
         crossOut = game.Content.Load<Texture2D>("crossout");
 
@@ -54,14 +59,12 @@ public class MainGameScreen : GameScreen
         {
             node.Update(gameTime, mouseState);
         }
+
+
     }
 
     public override void Draw(SpriteBatch spriteBatch)
     {
-        foreach (var node in nodes)
-        {
-            node.Draw(spriteBatch, font);
-        }
 
         // Draw lines between nodes
         for (int i = 0; i < nodes.Count - 1; i++)
@@ -74,6 +77,11 @@ public class MainGameScreen : GameScreen
             Vector2 end = endNode.Position - direction * endNode.Radius;
 
             spriteBatch.DrawLine(start, end, lineThickness, Color.Black);
+        }
+
+        foreach (var node in nodes)
+        {
+            node.Draw(spriteBatch, font);
         }
     }
 }

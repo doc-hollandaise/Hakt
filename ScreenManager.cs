@@ -1,13 +1,41 @@
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 public class ScreenManager
 {
     private GameScreen currentScreen;
+    private Game1 Game { get; }
+    private GraphicsDeviceManager Graphics { get; }
 
-    public void ChangeScreen(GameScreen screen)
+    public ScreenManager(Game1 game1, GraphicsDeviceManager graphics)
     {
-        currentScreen = screen;
+        Game = game1;
+        Graphics = graphics;
+    }
+
+
+
+    public enum ScreenType
+    {
+        MainGameScreen,
+        DetailScreen,
+    }
+
+    public void ChangeScreen(ScreenType screen)
+    {
+        switch (screen)
+        {
+            case ScreenType.MainGameScreen:
+                currentScreen = new MainGameScreen(Game, Graphics);
+                break;
+            case ScreenType.DetailScreen:
+                currentScreen = new DetailScreen(Game, Graphics);
+                break;
+            default:
+                throw new System.ArgumentException("Invalid screen type");
+        }
+
         currentScreen.Initialize();
         currentScreen?.LoadContent();
 

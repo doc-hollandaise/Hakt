@@ -1,4 +1,5 @@
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\ball.xnb
+C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\Button.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\crossout.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\Font.xnb
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Content\node.xnb
@@ -11,7 +12,10 @@ C:\Games\Monogame\Hakt\bin\Debug\net6.0\Hakt.deps.json
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Hakt.runtimeconfig.json
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Hakt.dll
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Hakt.pdb
+C:\Games\Monogame\Hakt\bin\Debug\net6.0\Autofac.dll
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\MonoGame.Extended.dll
+C:\Games\Monogame\Hakt\bin\Debug\net6.0\MonoGame.Extended.Graphics.dll
+C:\Games\Monogame\Hakt\bin\Debug\net6.0\MonoGame.Extended.Tiled.dll
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\MonoGame.Framework.dll
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Games\Monogame\Hakt\bin\Debug\net6.0\xunit.abstractions.dll

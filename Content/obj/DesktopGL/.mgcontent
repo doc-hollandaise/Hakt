@@ -5,11 +5,15 @@
   <Config />
   <SourceFiles>
     <File>C:/Games/Monogame/Hakt/Content/ball.png</File>
+    <File>C:/Games/Monogame/Hakt/Content/Button.png</File>
     <File>C:/Games/Monogame/Hakt/Content/crossout.png</File>
     <File>C:/Games/Monogame/Hakt/Content/Font.spritefont</File>
+    <File>C:/Games/Monogame/Hakt/Content/node.png</File>
     <File>C:/Games/Monogame/Hakt/Content/stars.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework.Input;
 
 public class GameShape
 {
-    private Color borderColor;
 
     public Vector2 Position { get; set; }
     public float Radius { get; set; }
@@ -40,7 +39,6 @@ public class GameShape
     {
         Position = position;
         Radius = radius;
-        this.borderColor = borderColor;
         Label = label;
     }
 
@@ -54,7 +52,7 @@ public class GameShape
             hasBeenClicked = true;
 
 
-            parentGame.ScreenManager.ChangeScreen(new DetailScreen(parentGame));
+            parentGame.ScreenManager.ChangeScreen(ScreenManager.ScreenType.DetailScreen);
         }
 
         if (isHovered && !hasBeenClicked)

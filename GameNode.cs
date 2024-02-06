@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework.Input;
 
 public class GameNode
 {
-    private Color borderColor;
 
     public Vector2 Position { get; set; }
     public float Radius { get; set; }
@@ -41,7 +40,6 @@ public class GameNode
     {
         Position = position;
         Radius = radius;
-        this.borderColor = borderColor;
         Label = label;
     }
 
@@ -49,7 +47,7 @@ public class GameNode
     {
         ParentGame = game;
         NodeBG = game.Content.Load<Texture2D>("node");
-        DestinationRectangle = new Rectangle((int)Position.X - 75, (int)Position.Y - 75, 150, 150);
+        DestinationRectangle = new Rectangle((int)Position.X - 70, (int)Position.Y - 75, 150, 150);
     }
 
     public void Update(GameTime gameTime, MouseState mouseState)
@@ -62,7 +60,7 @@ public class GameNode
             hasBeenClicked = true;
 
 
-            ParentGame.ScreenManager.ChangeScreen(new DetailScreen(ParentGame));
+            ParentGame.ScreenManager.ChangeScreen(ScreenManager.ScreenType.DetailScreen);
         }
 
         if (isHovered && !hasBeenClicked)
@@ -78,19 +76,20 @@ public class GameNode
             int offsetX = (scaledWidth - 150) / 2; // Ensure the growth is centered
             int offsetY = (scaledHeight - 150) / 2;
 
-            DestinationRectangle = new Rectangle((int)Position.X - 75 - offsetX, (int)Position.Y - 75 - offsetY, scaledWidth, scaledHeight);
+            DestinationRectangle = new Rectangle((int)Position.X - 70 - offsetX, (int)Position.Y - 75 - offsetY, scaledWidth, scaledHeight);
             if (AnimationProgress >= Game1.AnimationDuration)
             {
                 AnimationProgress = 0f;
-                DestinationRectangle = new Rectangle((int)Position.X - 75, (int)Position.Y - 75, 150, 150);
+                DestinationRectangle = new Rectangle((int)Position.X - 70, (int)Position.Y - 75, 150, 150);
 
                 // Trigger any specific action for this GameNode
             }
         }
 
-        if (!isHovered && AnimationProgress >= Game1.AnimationDuration)
+        if (!isHovered)
         {
             AnimationProgress = 0f;
+            DestinationRectangle = new Rectangle((int)Position.X - 70, (int)Position.Y - 75, 150, 150);
 
             // Trigger any specific action for this GameNode
         }

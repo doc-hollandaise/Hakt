@@ -59,8 +59,8 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        ScreenManager = new ScreenManager();
-        ScreenManager.ChangeScreen(new MainGameScreen(this));
+        ScreenManager = new ScreenManager(this, graphics);
+        ScreenManager.ChangeScreen(ScreenManager.ScreenType.MainGameScreen);
         base.Initialize();
     }
 
