@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Controls;
 using HaktComponent;
 
+//  TODO: handle duplicate draw on return from detail screen
 
 public class MainGameScreen : GameScreen
 {

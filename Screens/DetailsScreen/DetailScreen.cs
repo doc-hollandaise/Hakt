@@ -18,6 +18,8 @@ public class DetailScreen : GameScreen
 
     private int atlasXOffset;
     private int atlasYOffset;
+
+    private int gridSpacing = 10;
     private List<Component> _gameComponents;
 
     //  Goals
@@ -58,7 +60,7 @@ public class DetailScreen : GameScreen
 
         var backButton = new Button(game.Content.Load<Texture2D>("Button"), game.Content.Load<SpriteFont>("Font"))
         {
-            Position = new Vector2(centerX - 50, 100),
+            Position = new Vector2(centerX - 63, 100),
             Text = "BACK",
         };
         backButton.Click += BackButton_Click;
@@ -85,10 +87,11 @@ public class DetailScreen : GameScreen
         Rectangle topRight = new Rectangle(imageWidth, 0, imageWidth, imageHeight);
         Rectangle bottomLeft = new Rectangle(0, imageHeight, imageWidth, imageHeight);
         Rectangle bottomRight = new Rectangle(imageWidth, imageHeight, imageWidth, imageHeight);
-        Vector2 startTopLeft = new Vector2(centerX - atlasXOffset, centerY - atlasYOffset);
-        Vector2 startTopRight = new Vector2(centerX, centerY - atlasYOffset);
-        Vector2 startBottomLeft = new Vector2(centerX - atlasXOffset, centerY);
-        Vector2 startBottomRight = new Vector2(centerX, centerY);
+
+        Vector2 startTopLeft = new Vector2(centerX - atlasXOffset - gridSpacing / 2, centerY - atlasYOffset);
+        Vector2 startTopRight = new Vector2(centerX + gridSpacing / 2, centerY - atlasYOffset);
+        Vector2 startBottomLeft = new Vector2(centerX - atlasXOffset - gridSpacing / 2, centerY + gridSpacing);
+        Vector2 startBottomRight = new Vector2(centerX + gridSpacing / 2, centerY + gridSpacing);
 
         foreach (var component in _gameComponents)
             component.Draw(spriteBatch);
@@ -97,6 +100,8 @@ public class DetailScreen : GameScreen
         spriteBatch.Draw(starAtlas, startTopRight, topRight, Color.White);
         spriteBatch.Draw(starAtlas, startBottomLeft, bottomLeft, Color.White);
         spriteBatch.Draw(starAtlas, startBottomRight, bottomRight, Color.White);
+
+        // spriteBatch.DrawLine(new Vector2(centerX, 0), new Vector2(centerX, 700), 1.0f, Color.Black);
     }
 
     private void BackButton_Click(object sender, EventArgs e)
