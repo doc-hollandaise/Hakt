@@ -40,10 +40,7 @@ public class Game1 : Game
     private GraphicsDeviceManager graphics;
     private SpriteBatch spriteBatch;
 
-    private float lineThickness = 2f;
-
     public Texture2D CrossOut { get; set; }
-    private SpriteFont font;
 
     public Game1()
     {
@@ -60,7 +57,9 @@ public class Game1 : Game
     protected override void Initialize()
     {
         ScreenManager = new ScreenManager(this, graphics);
-        ScreenManager.ChangeScreen(ScreenManager.ScreenType.MainGameScreen);
+        //  TODO: Return to MainGameScreen after detail dev
+        //  ScreenManager.ChangeScreen(ScreenManager.ScreenType.MainGameScreen);
+        ScreenManager.ChangeScreen(ScreenManager.ScreenType.DetailScreen);
         base.Initialize();
     }
 

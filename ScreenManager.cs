@@ -7,6 +7,7 @@ public class ScreenManager
     private GameScreen currentScreen;
     private Game1 Game { get; }
     private GraphicsDeviceManager Graphics { get; }
+    private MainGameScreen main;
 
     public ScreenManager(Game1 game1, GraphicsDeviceManager graphics)
     {
@@ -27,7 +28,9 @@ public class ScreenManager
         switch (screen)
         {
             case ScreenType.MainGameScreen:
-                currentScreen = new MainGameScreen(Game, Graphics);
+                main ??= new MainGameScreen(Game, Graphics);
+
+                currentScreen = main;
                 break;
             case ScreenType.DetailScreen:
                 currentScreen = new DetailScreen(Game, Graphics);

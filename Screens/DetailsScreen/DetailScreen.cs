@@ -15,6 +15,9 @@ public class DetailScreen : GameScreen
     public int Columns { get; set; }
     private int imageWidth;
     private int imageHeight;
+
+    private int atlasXOffset;
+    private int atlasYOffset;
     private List<Component> _gameComponents;
 
     //  Goals
@@ -50,11 +53,13 @@ public class DetailScreen : GameScreen
         starAtlas = game.Content.Load<Texture2D>("stars");
         imageWidth = starAtlas.Width / 2;
         imageHeight = starAtlas.Height / 2;
+        atlasXOffset = imageWidth;
+        atlasYOffset = imageHeight;
 
         var backButton = new Button(game.Content.Load<Texture2D>("Button"), game.Content.Load<SpriteFont>("Font"))
         {
-            Position = new Vector2(10, 50),
-            Text = "Random",
+            Position = new Vector2(centerX - 50, 100),
+            Text = "BACK",
         };
         backButton.Click += BackButton_Click;
 
@@ -80,20 +85,23 @@ public class DetailScreen : GameScreen
         Rectangle topRight = new Rectangle(imageWidth, 0, imageWidth, imageHeight);
         Rectangle bottomLeft = new Rectangle(0, imageHeight, imageWidth, imageHeight);
         Rectangle bottomRight = new Rectangle(imageWidth, imageHeight, imageWidth, imageHeight);
-        Vector2 start = new Vector2(centerX, centerY);
+        Vector2 startTopLeft = new Vector2(centerX - atlasXOffset, centerY - atlasYOffset);
+        Vector2 startTopRight = new Vector2(centerX, centerY - atlasYOffset);
+        Vector2 startBottomLeft = new Vector2(centerX - atlasXOffset, centerY);
+        Vector2 startBottomRight = new Vector2(centerX, centerY);
 
         foreach (var component in _gameComponents)
             component.Draw(spriteBatch);
 
-        spriteBatch.Draw(starAtlas, start, topLeft, Color.White);
-        spriteBatch.Draw(starAtlas, new Vector2(imageWidth, 0), topRight, Color.White);
-        spriteBatch.Draw(starAtlas, new Vector2(0, imageHeight), bottomLeft, Color.White);
-        spriteBatch.Draw(starAtlas, new Vector2(imageWidth, imageHeight), bottomRight, Color.White);
+        spriteBatch.Draw(starAtlas, startTopLeft, topLeft, Color.White);
+        spriteBatch.Draw(starAtlas, startTopRight, topRight, Color.White);
+        spriteBatch.Draw(starAtlas, startBottomLeft, bottomLeft, Color.White);
+        spriteBatch.Draw(starAtlas, startBottomRight, bottomRight, Color.White);
     }
 
     private void BackButton_Click(object sender, EventArgs e)
     {
-
+        game.ScreenManager.ChangeScreen(ScreenManager.ScreenType.MainGameScreen);
     }
 }
 
